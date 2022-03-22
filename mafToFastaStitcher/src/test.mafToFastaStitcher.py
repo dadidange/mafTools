@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ##################################################
 # Copyright (C) 2013 by 
 # Dent Earl (dearl@soe.ucsc.edu, dentearl@gmail.com)

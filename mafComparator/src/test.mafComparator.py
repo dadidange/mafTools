@@ -701,7 +701,7 @@ class LegitSequencesTest(unittest.TestCase):
             passedTT = totalTrue == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalTrue')
             passedTF = totalFalse == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalFalse')
             if not (passedTT and passedTF):
-                print 'knownValues Test failed on test %d' % i
+                print ('knownValues Test failed on test %d' % i)
             self.assertTrue(passedTT and passedTF)
         mtt.removeDir(tmpDir)
     def test_legitSequencesFail(self):
@@ -789,7 +789,7 @@ class NumberOfPairsTest(unittest.TestCase):
             passedTT = totalTrue == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalTrue')
             passedTF = totalFalse == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalFalse')
             if not (passedTT and passedTF):
-                print 'knownValues Test failed on test %d' % i
+                print('knownValues Test failed on test %d' % i)
             self.assertTrue(passedTT and passedTF)
         mtt.removeDir(tmpDir)
     def test_numberOfPairsFail(self):
@@ -877,7 +877,7 @@ class KnownValuesTest(unittest.TestCase):
             passedTT = totalTrue == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalTrue')
             passedTF = totalFalse == getAggregateResult(os.path.abspath(os.path.join(tmpDir, 'output.xml')), 'totalFalse')
             if not (passedTT and passedTF):
-                print 'knownValues Test failed on test %d' % i
+                print('knownValues Test failed on test %d' % i)
             self.assertTrue(passedTT and passedTF)
         mtt.removeDir(tmpDir)
     def test_memory_2(self):
@@ -992,7 +992,7 @@ class randomSeedTests(unittest.TestCase):
             seed = int(ac.attrib['seed'])
             cmd.append('--seed=%d' % seed)
             origHomTests = tree.findall('homologyTests')
-            for i in xrange(0, 10):
+            for i in range(0, 10):
                 mtt.recordCommands([cmd], tmpDir)
                 mtt.runCommandsS([cmd], tmpDir)
                 tree = ET.parse(os.path.join(tmpDir, 'output.xml'))
@@ -1028,7 +1028,7 @@ class randomSeedTests(unittest.TestCase):
             mtt.recordCommands([cmd], tmpDir)
             mtt.runCommandsS([cmd], tmpDir)
             self.assertTrue(mtt.noMemoryErrors(os.path.join(tmpDir, 'valgrind.xml')))
-            for i in xrange(0, 4):
+            for i in range(0, 4):
                 mtt.recordCommands([cmd], tmpDir)
                 mtt.runCommandsS([cmd], tmpDir)
                 self.assertTrue(mtt.noMemoryErrors(os.path.join(tmpDir, 'valgrind.xml')))

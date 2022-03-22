@@ -37,7 +37,7 @@ sources = $(foreach f, comparatorAPI cString comparatorRandom test.comparatorAPI
 all: buildVersion ${progs}
 buildVersion: src/buildVersion.c
 src/buildVersion.c: ${sources} ${dependecies}
-	@python ../lib/createVersionSources.py
+	@python3 ../lib/createVersionSources.py
 
 ../lib/%.o: ../lib/%.c ../inc/%.h
 	cd ../lib/ && make
@@ -82,7 +82,7 @@ test/%.o: src/%.c src/%.h ${sonLibPath}/sonLib.a
 	mv CuTest.a $@
 
 test: buildVersion test/allTests test/mafComparator test/testRand
-	./test/allTests && python2.7 src/test.mafComparator.py --verbose  && rm -rf ./test/ && rmdir ./tempTestDir
+	./test/allTests && python src/test.mafComparator.py --verbose  && rm -rf ./test/ && rmdir ./tempTestDir
 
 test/allTests: src/allTests.c ${testAPI} ${testObjects} ${sonLibPath}/sonLib.a
 	mkdir -p $(dir $@)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 """
 mafValidator
 10 Oct 2011
@@ -88,7 +88,7 @@ def initOptions(parser):
                      help='Print version number and exit.')
 def checkOptions(options, args, parser):
    if options.isVersion:
-      print 'mafValidator.py, version %s' % g_version
+      print('mafValidator.py, version %s' % g_version)
       sys.exit(0)
    if options.filename is None:
       parser.error('specify --maf')
@@ -336,7 +336,7 @@ def validateAlignmentLine(lineno, line, filename):
 
 def validateKeyValuePairLine(lineno, line, filename):
    d = line.split()
-   for i in xrange(1, len(d)):
+   for i in range(1, len(d)):
       if len(d[i].split('=')) != 2:
          raise KeyValuePairError('maf %s has a line that does not contain '
                                  'good key-value pairs on line number %d: %s' 

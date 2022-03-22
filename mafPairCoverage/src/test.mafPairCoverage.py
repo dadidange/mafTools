@@ -229,13 +229,12 @@ def binningIsCorrect(filename, true_array):
         return False
   return True
 
-
 def compressList(a_list, bin_length):
   """Takes a binary (0s and 1s) list and then reduces the length
   to be ceil(len(a_list) / bin_length) and sums all the values from
   a_list to go in the new list's larger buckets.
   """
-  b_list = np.zeros(math.ceil(len(a_list) / float(bin_length)))
+  b_list = np.zeros(int(math.ceil(len(a_list) / float(bin_length))))
   cur_bin = -1
   for i in xrange(0, len(a_list)):
     if not (i % bin_length):
