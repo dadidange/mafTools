@@ -3,3 +3,6 @@ bin
 *.pyc
 *.a
 buildVersion*
+
+**tempTestDir
+get-pip.py

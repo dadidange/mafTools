@@ -1,3 +1,5 @@
 tempTestFiles/*
 test/*
 src/buildVersion.*
+example/*.html
+example/*.xml
