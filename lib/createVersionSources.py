@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env 2.7
 import os
 import subprocess
 import sys

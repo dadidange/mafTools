@@ -19,6 +19,14 @@ With the exception of the python dependencies, when a component is missing a dep
 2. <code>cd</code> into <code>mafTools</code> directory.
 3. Type <code>make</code>.
 
+
+## docker 
+Execute the `./docker_build.sh` to build an image named maf_tools_image.
+To start a container run the `docker_start.sh` or run `docker start <container_name>` if it already exists and access via `docker exec -it maft bash`. You might want to change the data directory path in [docker_start.sh](docker_start.sh).
+Dont forget to stop the image after working. 
+
+
+
 ## Components
 * **mafComparator** A program to compare two maf files by sampling. Useful when testing predicted alignments against known true alignments.
 * **mafCoverage** A program to calculate the amount of alignment coverage between a target sequence and all other sequences in a maf file.
