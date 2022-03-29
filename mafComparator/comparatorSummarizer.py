@@ -263,25 +263,25 @@ def summarize(options):
         recallSelf = float('nan')
     else:
         recallSelf = float(truePosSelfA) / (truePosSelfA + falseNegSelf)
-    print '%35s %10s %10s %10s %9s %9s %9s %9s' % ('', 'Precision', 'Recall', 'F-score', 'TP (A)', 'TP (B)', 'FP (B)', 'FN (A)')
+    print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('dataset', 'Precision', 'Recall', 'F-score', 'TP (A)', 'TP (B)', 'FP (B)', 'FN (A)')
     if isRegionMode(pairs):
         sanityCheckRegionMode(truePosA, truePosB, falsePos, falseNeg, 
                               truePosOutA, truePosOutB, falsePosOut, falseNegOut, 
                               truePosSelfA, truePosSelfB, falsePosSelf, falseNegSelf, 
                               truePosSelfOutA, truePosSelfOutB, falsePosSelfOut, falseNegSelfOut, 
                               pairs, options)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/o self)  inside', precision, recall, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/o self)  inside', precision, recall, 
                                                              2 * (precision * recall) / (precision + recall),
                                                              truePosA, truePosB, falsePos, falseNeg)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/o self) outside', precisionOut, recallOut, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/o self) outside', precisionOut, recallOut, 
                                                              2 * ((precisionOut * recallOut) / 
                                                                   (precisionOut + recallOut)),
                                                              truePosOutA, truePosOutA, falsePosOut, falseNegOut)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/  self)  inside', precisionSelf, recallSelf, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/  self)  inside', precisionSelf, recallSelf, 
                                                              2 * ((precisionSelf * recallSelf) / 
                                                                   (precisionSelf + recallSelf)),
                                                              truePosSelfA, truePosSelfB, falsePosSelf, falseNegSelf)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/  self) outside', precisionSelfOut, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/  self) outside', precisionSelfOut, 
                                                              recallSelfOut,
                                                              2 * ((precisionSelfOut * recallSelfOut) / 
                                                                   (precisionSelfOut + recallSelfOut)),
@@ -289,10 +289,10 @@ def summarize(options):
     else:
         sanityCheck(truePosA, truePosB, falsePos, falseNeg, truePosSelfA, 
                     truePosSelfB, falsePosSelf, falseNegSelf, pairs, options)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/o self)', precision, recall, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/o self)', precision, recall, 
                                                              2 * (precision * recall) / (precision + recall),
                                                              truePosA, truePosB, falsePos, falseNeg)
-        print '%35s %10.5f %10.5f %10.5f %9d %9d %9d %9d' % ('Overall (w/  self)', precisionSelf, recallSelf, 
+        print '%35s, %10s, %10s, %10s, %9s, %9s, %9s, %9s' % ('Overall (w/  self)', precisionSelf, recallSelf, 
                                                              2 * ((precisionSelf * recallSelf) / 
                                                                   (precisionSelf + recallSelf)),
                                                              truePosSelfA, truePosSelfB, falsePosSelf, falseNegSelf)
